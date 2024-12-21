@@ -28,7 +28,7 @@ Before starting, ensure you have the following installed:
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/your-repo-name/flask-mongodb-kubernetes.git
+git clone https://github.com/Mohammedbasem12/Flask-MongoDB-Project
 cd flask-mongodb-kubernetes
 ```
 
