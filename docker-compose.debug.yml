@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  flask-app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: mohammadmasalmeh/flask-mongodb-app:latest
+    ports:
+      - "5003:5003"
+      - "5678:5678"
+    command: ["sh", "-c", "pip install debugpy && python -m debugpy --wait-for-client --listen 0.0.0.0:5678 app.py"]
+    environment:
+      - FLASK_APP=app.py
+      - MONGO_URI=mongodb://mongodb-service:27017/
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    volumes:
+      - mongodb-data:/data/db
+
+volumes:
+  mongodb-data:
