@@ -1,3 +1,4 @@
+
 # Flask-MongoDB-Kubernetes Application
 
 This project demonstrates the deployment of a containerized Python Flask application with MongoDB on a Kubernetes cluster. The application supports CRUD (Create, Read, Update, Delete) operations through RESTful API endpoints.
@@ -41,7 +42,7 @@ cd flask-mongodb-kubernetes
     docker push <your-dockerhub-username>/flask-mongodb-app:latest
     ```
 
----
+
 
 ## Deployment Steps
 
@@ -65,17 +66,14 @@ cd flask-mongodb-kubernetes
     kubectl apply -f python-app-service.yaml
     ```
 
----
 
 ## Endpoints
 The Flask application exposes the following endpoints:
 
-| Method | Endpoint   | Description                         |
-|--------|------------|-------------------------------------|
-| POST   | `/create`  | Create a new record in MongoDB      |
-| GET    | `/read`    | Read all records from MongoDB       |
-| PUT    | `/update`  | Update a record in MongoDB          |
-| DELETE | `/delete`  | Delete a record from MongoDB        |
+ POST    `/create`   Create a new record in MongoDB      
+ GET     `/read`     Read all records from MongoDB       
+ PUT     `/update`   Update a record in MongoDB          
+ DELETE  `/delete`   Delete a record from MongoDB        
 
 ### Example: `curl` Commands
 1. **Create a Record**
@@ -95,13 +93,13 @@ The Flask application exposes the following endpoints:
     curl -X DELETE -H "Content-Type: application/json" -d '{"title": "My Book"}' http://<service-ip>:<port>/delete
     ```
 
----
+
 
 ## Testing the Application
 1. Test the Flask API using tools like `curl`, Postman, or a web browser.
 2. Verify the Flask app connects to MongoDB and performs CRUD operations successfully.
 
----
+
 
 ## Project Files
 - `app.py`: Python Flask application.
@@ -112,7 +110,7 @@ The Flask application exposes the following endpoints:
 - `python-app-deployment.yaml`: Kubernetes Deployment for the Flask app.
 - `python-app-service.yaml`: Kubernetes Service for the Flask app.
 
----
+
 
 ## Troubleshooting
 1. **Cannot Connect to MongoDB**:
@@ -134,7 +132,10 @@ The Flask application exposes the following endpoints:
      kubectl get svc
      ```
 
----
 
 ## Acknowledgments
 This project is part of the AIN-3003 course assignment at Bahçeşehir University.
+
+# Flask-MongoDB-Project
+A Flask application with MongoDB deployed on Kubernetes.
+
